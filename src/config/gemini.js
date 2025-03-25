@@ -27,8 +27,10 @@ import {
     });
   
     const result = await chatSession.sendMessage(prompt);
-    const response =  result.response.text(); // ✅ Correct way to handle async response
-    console.log(response);
+    const response =  await result.response.text(); // ✅ Correct way to handle async response
+    console.log(result.response.text());
+
+   return response
     
   }
   
